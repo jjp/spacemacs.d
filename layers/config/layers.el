@@ -8,12 +8,16 @@
           org-enable-bootstrap-support t
           org-enable-github-support t
           org-enable-org-journal-support t
+          org-enable-roam-support t
+          org-roam-v2-ack t
           )
      helm
      ivy
-     osx
+     (osx :variables
+          osx-right-command-as 'super)
      go
      restclient
+     selectric
      typescript
      nginx
      lsp
@@ -65,5 +69,6 @@
      chrome
      ipython-notebook
      themes-megapack
+     unicode-fonts
      )
 )
