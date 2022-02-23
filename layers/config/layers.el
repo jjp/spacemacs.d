@@ -8,6 +8,7 @@
           org-enable-bootstrap-support t
           org-enable-github-support t
           org-enable-org-journal-support t
+          org-enable-reveal-js-support t
           org-enable-roam-support t
           org-roam-v2-ack t
           )
