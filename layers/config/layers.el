@@ -3,7 +3,7 @@
 (configuration-layer/declare-layers
    '(asciidoc
      sql
-     php
+     (php :variables php-backend 'lsp)
      (org :variables
           org-enable-bootstrap-support t
           org-enable-github-support t
