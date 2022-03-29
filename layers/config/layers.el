@@ -1,7 +1,8 @@
 ;;; -*- lexical-binding: t; -*-
 
 (configuration-layer/declare-layers
-   '(asciidoc
+ '(
+   asciidoc
      sql
      (php :variables php-backend 'lsp)
      (org :variables
