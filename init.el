@@ -31,7 +31,9 @@ values."
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers/")
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(perl5
+   '(ansible
+     protobuf
+     perl5
      racket
      (config :location local)
      (personal :location local)
@@ -40,7 +42,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(ox-twbs)
+   dotspacemacs-additional-packages '(ox-twbs exec-path-from-shell rego-mode)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -320,6 +322,7 @@ you should place your code here."
      (plantuml . t)
      (python . t)
      (restclient . t)
+     (shell . t)
      ))
   (setq org-default-notes-file "~/org/notes.org")
   (setq org-agenda-files (quote ("~/org" "~/.notes")))
@@ -333,6 +336,9 @@ you should place your code here."
   ;;   (global-set-key [remap kill-ring-save] #'easy-kill)
   ;;   (global-set-key [remap mark-sexp] #'easy-mark))
   (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize))
 
   )
 
