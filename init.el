@@ -40,7 +40,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(ox-twbs)
+   dotspacemacs-additional-packages '(ox-twbs feature-mode rego-mode mermaid-mode)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -317,12 +317,18 @@ you should place your code here."
    '((clojure . t)
      (emacs-lisp . t)
      (http . t)
+     (mermaid . t)
      (plantuml . t)
      (python . t)
      (restclient . t)
+     (shell . t)
      ))
   (setq org-default-notes-file "~/org/notes.org")
   (setq org-agenda-files (quote ("~/org" "~/.notes")))
+  (add-to-list 'backup-directory-alist
+               (cons "." "~/.spacemacs.d/backups/"))
+  (setq lock-file-name-transforms
+        '(("\\`/.*/\\([^/]+\\)\\'" "/var/tmp/\\1" t)))
   (eval-after-load "flyspell"
     '(progn
        (define-key flyspell-mouse-map [C-S-mouse-1] #'flyspell-correct-word)

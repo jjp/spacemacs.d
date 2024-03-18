@@ -30,6 +30,7 @@
      (python :variables python-enable-yapf-format-on-save t)
      yaml
      javascript
+     mermaid
      csv
      ruby
      (clojure :variables
